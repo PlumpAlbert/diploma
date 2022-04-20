@@ -1,0 +1,29 @@
+\documentclass[../1.tex]{subfiles}
+\usepackage{tabularray}
+
+\begin{document}
+
+\begin{longtblr}
+[
+	caption = {Сущность \textquote{Тариф} (price\_lists)},
+	label = {tab:price_lists},
+]
+{
+	hlines, vlines,
+	colspec = {L c c c},
+	width = \textwidth,
+	rowhead = 1,
+	rowfoot = 0,
+}
+\SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
+
+id & bigint & \checkmark & \checkmark \\
+pl\_auto\_per\_hour & float & \checkmark & \\
+pl\_trailer\_per\_hour & float & \checkmark & \\
+pl\_auto\_per\_distance & float & \checkmark & \\
+pl\_trailer\_per\_distance & float & \checkmark & \\
+pl\_auto\_with\_goods\_per\_distance & float & \checkmark & \\
+pl\_trailer\_with\_goods\_per\_distance & float & \checkmark & \\
+
+\end{longtblr}
+\end{document}
