@@ -1,0 +1,27 @@
+\documentclass[../1.tex]{subfiles}
+\usepackage{tabularray}
+
+\begin{document}
+
+\begin{longtblr}
+[
+	caption = {Сущность \textquote{Водитель} (drivers)},
+	label = {tab:drivers},
+]
+{
+	hlines, vlines,
+	colspec = {L c c c},
+	width = \textwidth,
+	rowhead = 1,
+	rowfoot = 0,
+}
+\SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
+
+id & bigint & \checkmark & \checkmark \\
+user & bigint & \checkmark & \\
+driver\_license\_number & bigint & \checkmark & \\
+driver\_license\_class & int & \checkmark & \\
+driver\_wage & float & \checkmark & \\
+
+\end{longtblr}
+\end{document}
