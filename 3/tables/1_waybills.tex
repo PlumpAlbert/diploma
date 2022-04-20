@@ -1,0 +1,55 @@
+\documentclass[../1.tex]{subfiles}
+\usepackage{tabularray}
+
+\begin{document}
+
+\begin{longtblr}
+[
+	caption = {Сущность \textquote{Путевой лист} (waybills)},
+	label = {tab:waybills},
+]
+{
+	hlines, vlines,
+	colspec = {L c c c},
+	width = \textwidth,
+	rowhead = 1,
+	rowfoot = 0,
+}
+\SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
+
+id & bigint & \checkmark & \checkmark \\
+waybill\_number & int & \checkmark & \\
+waybill\_serial & varchar(16) & & \\
+waybill\_from\_date & datetime & \checkmark & \\
+waybill\_expiration\_date & datetime & \checkmark & \\
+waybill\_medical\_examination\_date & datetime & \checkmark & \\
+waybill\_medical\_examination\_result & varchar(1024) & & \\
+waybill\_maintenance\_date & datetime & \checkmark & \\
+waybill\_maintenance\_result & boolean & \checkmark & \\
+waybill\_checkout\_date\_planned & datetime & \checkmark & \\
+waybill\_arrival\_date\_planned & datetime & \checkmark & \\
+waybill\_checkout\_date & datetime & \checkmark & \\
+waybill\_arrival\_date & datetime & \checkmark & \\
+waybill\_odometer\_start & float & \checkmark & \\
+waybill\_odometer\_end & float & \checkmark & \\
+waybill\_movement\_time & timestamp & \checkmark & \\
+waybill\_loading\_time & timestamp & \checkmark & \\
+waybill\_failure\_time & timestamp & \checkmark & \\
+waybill\_number\_of\_trips & int & \checkmark & \\
+waybill\_goods\_weight & float & \checkmark & \\
+auto\_mileage\_summary & float & \checkmark & \\
+auto\_mileage\_with\_goods & float & \checkmark & \\
+trailer\_work\_time & timestamp & \checkmark & \\
+trailer\_mileage\_summary & float & \checkmark & \\
+trailer\_mileage\_with\_goods & float & \checkmark & \\
+driver\_wage & float & \checkmark & \\
+driver & bigint & \checkmark & \\
+dispatcher & bigint & \checkmark & \\
+medical\_worker & bigint & \checkmark & \\
+technician & bigint & \checkmark & \\
+accountant & bigint & \checkmark & \\
+auto & bigint & \checkmark & \\
+price\_list & bigint & \checkmark & \\
+request & bigint & \checkmark & \\
+\end{longtblr}
+\end{document}
