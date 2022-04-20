@@ -1,0 +1,25 @@
+\documentclass[../1.tex]{subfiles}
+\usepackage{tabularray}
+
+\begin{document}
+
+\begin{longtblr}
+[
+	caption = {Сущность \textquote{Товарно-транспортная накладная}
+	(consignment\_notes)},
+	label = {tab:consignment_notes},
+]
+{
+	hlines, vlines,
+	colspec = {L c c c},
+	width = \textwidth,
+	rowhead = 1,
+	rowfoot = 0,
+}
+\SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
+
+id & bigint & \checkmark & \checkmark \\
+task\_completion & bigint & \checkmark & \\
+
+\end{longtblr}
+\end{document}
