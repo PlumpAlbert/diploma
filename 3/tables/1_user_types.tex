@@ -5,8 +5,8 @@
 
 \begin{longtblr}
 [
-	caption = {Сущность \textquote{Прицепы путевого листа} (waybill\_trailers)},
-	label = {tab:waybill_trailers},
+	caption = {Сущность \textquote{Тип пользователя} (user\_types)},
+	label = {tab:user_types},
 ]
 {
 	hlines, vlines,
@@ -17,7 +17,8 @@
 }
 \SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
 
-waybill & bigint & \checkmark & \checkmark \\
-trailer & bigint & \checkmark & \checkmark \\
+id & bigint & \checkmark & \checkmark \\
+name & varchar(256) & \checkmark & \\
+
 \end{longtblr}
 \end{document}
