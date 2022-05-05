@@ -5,9 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: plumpalbert/doctex
-      volumes:
-        - ${{ github.workspace }}:/work/src
-        - ${{ github.workspace }}/out:/work/out
+      env:
+        SRC_DIR: /__w/diploma/diploma
+        OUT_DIR: /__w/diploma/diploma/out
+        TMP_DIR: /__w/_temp
+        TEXLIVEFILE: nirs.tex
 
     steps:
       - uses: actions/checkout@v1
