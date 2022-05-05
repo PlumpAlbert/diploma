@@ -30,6 +30,7 @@ jobs:
           TEXINPUTS: ".:./dotfiles/texmf/tex//:"
       - name: Release compiled file
         uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           name: Diploma
           files: |
