@@ -24,6 +24,8 @@ jobs:
         with:
           root_file: nirs.tex
           latexmk_use_xelatex: true
+          extra_fonts: |
+            ./.github/fonts/*
         env:
           TEXINPUTS: ".:./dotfiles/texmf/tex//:"
       - name: Release compiled file
