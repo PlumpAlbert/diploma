@@ -1,0 +1,13 @@
+name: compile-project
+on: [push]
+jobs:
+  compile-project:
+    runs-on: ubuntu-latest
+    container:
+      image: plumpalbert/doctex
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Compile document
+        run: |
+          work "xelatex nirs.tex"
