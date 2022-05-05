@@ -8,13 +8,17 @@ jobs:
     name: A job to compile diploma
 
     steps:
-      - name: Download custom classes
-        uses: actions/checkout@v3
-        with:
-          repository: PlumpAlbert/dotfiles
-          path: dotfiles
       - name: Clone repo
         uses: actions/checkout@v3
+      - name: Download custom classes
+        run: |
+          curl -LO 'https://raw.githubusercontent.com/PlumpAlbert/dotfiles/master/texmf/tex/gost.cls'
+          curl -LO 'https://raw.githubusercontent.com/PlumpAlbert/dotfiles/master/texmf/tex/gost/gost-diploma.sty'
+          curl -LO 'https://raw.githubusercontent.com/PlumpAlbert/dotfiles/master/texmf/tex/gost/gost-headings.sty'
+          curl -LO 'https://raw.githubusercontent.com/PlumpAlbert/dotfiles/master/texmf/tex/gost/gost-listings.sty'
+          curl -LO 'https://raw.githubusercontent.com/PlumpAlbert/dotfiles/master/texmf/tex/gost/gost-lists.sty'
+          curl -LO 'https://raw.githubusercontent.com/PlumpAlbert/dotfiles/master/texmf/tex/gost/gost-table.sty'
+          curl -LO 'https://raw.githubusercontent.com/PlumpAlbert/dotfiles/master/texmf/tex/gost/gost-toc.sty'
       - name: Compile project
         uses: xu-cheng/latex-action@v2
         with:
