@@ -1,19 +1,30 @@
 name: compile-project
+
 on: [push]
+
 jobs:
   compile-project:
     runs-on: ubuntu-latest
-    container:
-      image: plumpalbert/doctex
-      env:
-        TMP_DIR: /tmp
-      volumes:
-        - ${{ github.workspace }}:/work/src
-        - ${{ github.workspace }}/build:/work/out
+    name: A job to compile diploma
 
     steps:
-      - uses: actions/checkout@v1
-      - name: Compile document
-        run: |
-          cd /work/src
-          work 'xelatex nirs.tex'
+      - name: Download custom classes
+        uses: actions/checkout@v3
+        with:
+          repository: PlumpAlbert/dotfiles
+          path: dotfiles
+      - name: Clone repo
+        uses: actions/checkout@v3
+      - name: Compile project
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: nirs.tex
+          latexmk_use_xelatex: true
+        env:
+          TEXINPUTS: ".:./dotfiles/texmf/tex//:"
+      - name: Release compiled file
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Diploma
+          files: |
+            nirs.pdf
