@@ -5,6 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: plumpalbert/doctex
+      volumes:
+        - ${{ github.workspace }}:/work/src
+        - ${{ github.workspace }}/out:/work/out
 
     steps:
       - uses: actions/checkout@v1
