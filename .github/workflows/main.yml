@@ -6,13 +6,14 @@ jobs:
     container:
       image: plumpalbert/doctex
       env:
-        SRC_DIR: /__w/diploma/diploma
-        OUT_DIR: /__w/diploma/diploma/out
-        TMP_DIR: /__w/_temp
-        TEXLIVEFILE: nirs.tex
+        TMP_DIR: /tmp
+      volumes:
+        - ${{ github.workspace }}:/work/src
+        - ${{ github.workspace }}/build:/work/out
 
     steps:
       - uses: actions/checkout@v1
       - name: Compile document
         run: |
-          work "xelatex nirs.tex"
+          cd /work/src
+          work 'xelatex nirs.tex'
