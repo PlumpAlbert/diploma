@@ -1,0 +1,18 @@
+\begin{longtblr}
+[
+	caption = {Сущность \textquote{Тип пользователя} (user\_types)},
+	label = {tab:user_types},
+]
+{
+	hlines, vlines,
+	colspec = {L c c c},
+	width = \textwidth,
+	rowhead = 1,
+	rowfoot = 0,
+}
+\SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
+
+id & bigint & \checkmark & \checkmark \\
+name & varchar(256) & \checkmark & \\
+
+\end{longtblr}

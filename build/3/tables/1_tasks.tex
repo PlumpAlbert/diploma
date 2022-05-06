@@ -1,0 +1,23 @@
+\begin{longtblr}
+[
+	caption = {Сущность \textquote{Задание водителю} (tasks)},
+	label = {tab:tasks},
+]
+{
+	hlines, vlines,
+	colspec = {L c c c},
+	width = \textwidth,
+	rowhead = 1,
+	rowfoot = 0,
+}
+\SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
+
+id & bigint & \checkmark & \checkmark \\
+request & bigint & \checkmark & \\
+task\_goods\_name & varchar(1024) & \checkmark & \\
+task\_address\_load & varchar(256) & \checkmark & \\
+task\_address\_unload & varchar(256) & \checkmark & \\
+task\_goods\_weight & float & \checkmark & \\
+task\_route\_length & float & \checkmark & \\
+
+\end{longtblr}

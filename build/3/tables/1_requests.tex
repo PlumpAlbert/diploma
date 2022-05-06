@@ -1,0 +1,19 @@
+\begin{longtblr}
+[
+	caption = {Сущность \textquote{Заявка} (requests)},
+	label = {tab:requests},
+]
+{
+	hlines, vlines,
+	colspec = {L c c c},
+	width = \textwidth,
+	rowhead = 1,
+	rowfoot = 0,
+}
+\SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
+
+id bigint & \checkmark & \checkmark \\
+request\_client\_name & varchar(2048) & \checkmark & \\
+request\_arrival\_time & datetime & \checkmark & \\
+
+\end{longtblr}

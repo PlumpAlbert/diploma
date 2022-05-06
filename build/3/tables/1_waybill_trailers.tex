@@ -1,0 +1,17 @@
+\begin{longtblr}
+[
+	caption = {Сущность \textquote{Прицепы путевого листа} (waybill\_trailers)},
+	label = {tab:waybill_trailers},
+]
+{
+	hlines, vlines,
+	colspec = {L c c c},
+	width = \textwidth,
+	rowhead = 1,
+	rowfoot = 0,
+}
+\SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
+
+waybill & bigint & \checkmark & \checkmark \\
+trailer & bigint & \checkmark & \checkmark \\
+\end{longtblr}

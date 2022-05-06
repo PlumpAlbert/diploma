@@ -1,0 +1,33 @@
+\begin{longtblr}
+[
+	caption = {Сущность \textquote{Условия эксплуатации} (task\_conditions)},
+	label = {tab:task_conditions},
+]
+{
+	hlines, vlines,
+	colspec = {L c c c},
+	width = \textwidth,
+	rowhead = 1,
+	rowfoot = 0,
+}
+\SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
+
+id & bigint & \checkmark & \checkmark \\
+condition\_altitude & float & \checkmark & \\
+condition\_road\_quality & enum\_road\_category & \checkmark & \\
+condition\_difficult\_route & boolean & \checkmark & \\
+condition\_city\_population & float & \checkmark & \\
+condition\_often\_stops & boolean & \checkmark & \\
+condition\_slow\_speed & enum\_slow\_speed\_class & \checkmark & \\
+condition\_auto\_run\_in & boolean & \checkmark & \\
+condition\_auto\_transit & enum\_auto\_transit & \checkmark & \\
+condition\_technological\_transport & boolean & \checkmark & \\
+condition\_special\_transport & boolean & \checkmark & \\
+condition\_work\_at\_low\_quality\_roads & boolean & \checkmark & \\
+condition\_work\_emergency & boolean & \checkmark & \\
+condition\_training\_driving & enum\_training\_driving & \checkmark & \\
+condition\_climate\_control & boolean & \checkmark & \\
+condition\_forced\_idle\_time & boolean & \checkmark & \\
+condition\_warmup\_time & boolean & \checkmark & \\
+
+\end{longtblr}
