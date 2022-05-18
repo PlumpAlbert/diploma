@@ -2,6 +2,7 @@
 % Author: Plump Albert (plumpalbert@gmail.com)
 \documentclass[../nirs.tex]{subfiles}
 \usepackage[figuresleft]{rotating}
+\usepackage{pdflscape}
 
 \begin{document}
 \section{Выявление основных понятий и процессов, их свойств и закономерностей.
@@ -81,16 +82,19 @@
 Классовая диаграмма разрабатываемой системы представлена на рисунке
 \ref{fig:2_1_er_diagram}.
 
-\begin{sidewaysfigure}[hp!]
+\clearpage
+\begin{landscape}
+
+\begin{figure}[hp!]
   \centering
   \includegraphics[keepaspectratio,
-                   width=\textwidth,
-                   height=0.6\textheight]{./images/er-diagram.drawio.png}
+                   width=\paperwidth]{./images/er-diagram.drawio.png}
   \caption{ER-диаграмма системы}
   \label{fig:2_1_er_diagram}
-\end{sidewaysfigure}
+\end{figure}
 
-\pagebreak
+\end{landscape}
+\clearpage
 
 Центральной сущностью, представляющей основной интерес разрабатываемой системы,
 является \textquote{Автомобиль}. Она содержит информацию о конкретной единице
