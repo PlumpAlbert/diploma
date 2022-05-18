@@ -1,0 +1,24 @@
+\begin{longtblr}
+[
+    caption = {
+        Сущность
+        \textquote{Техническое обслуживание}
+        (\texttt{\small maintenances})
+    },
+	label = {tab:maintenances},
+]
+{
+	hlines, vlines,
+	colspec = {L c c c},
+	width = \textwidth,
+	rowhead = 1,
+	rowfoot = 0,
+}
+\SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
+    id & bigint & \checkmark & \checkmark \\
+    status & maintenance\_status & \checkmark & \\
+    start\_date & datetime & \checkmark & \\
+    deadline & datetime & \checkmark & \\
+    end\_date & datetime & \checkmark & \\
+    auto & bigint & \checkmark &
+\end{longtblr}

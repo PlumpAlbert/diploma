@@ -1,0 +1,23 @@
+\begin{longtblr}
+[
+    caption = {
+        Сущность
+        \textquote{Автомобиль}
+        (\texttt{\small automobiles})
+    },
+	label = {tab:automobiles},
+]
+{
+	hlines, vlines,
+	colspec = {L c c c},
+	width = \textwidth,
+	rowhead = 1,
+	rowfoot = 0,
+}
+\SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
+    id & bigint & \checkmark & \checkmark \\
+    registration\_plate & varchar & \checkmark & \\
+    garage\_plate & varchar & \checkmark & \\
+    vendor & varchar & \checkmark & \\
+    model & varchar & \checkmark &
+\end{longtblr}

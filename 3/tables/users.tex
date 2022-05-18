@@ -1,0 +1,23 @@
+\begin{longtblr}
+[
+    caption = {
+        Сущность
+        \textquote{Пользователь}
+        (\texttt{\small users})
+    },
+	label = {tab:users},
+]
+{
+	hlines, vlines,
+	colspec = {L c c c},
+	width = \textwidth,
+	rowhead = 1,
+	rowfoot = 0,
+}
+\SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
+    id & bigint & \checkmark & \checkmark \\
+    full\_name & varchar & \checkmark & \\
+    type & user\_type & \checkmark & \\
+    login & varchar & \checkmark & \\
+    password & char(512) & \checkmark &
+\end{longtblr}

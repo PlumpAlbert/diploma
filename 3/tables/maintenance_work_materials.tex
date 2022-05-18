@@ -1,0 +1,23 @@
+\begin{longtblr}
+[
+    caption = {
+        Сущность
+        \textquote{Материалы ТО}
+        (\texttt{\small maintenance\_work\_materials})
+    },
+	label = {tab:maintenance_work_materials},
+]
+{
+	hlines, vlines,
+	colspec = {L c c c},
+	width = \textwidth,
+	rowhead = 1,
+	rowfoot = 0,
+}
+\SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
+    id & bigint & \checkmark & \checkmark \\
+    planned\_waste & float & \checkmark &  \\
+    real\_waste & float & \checkmark &  \\
+    maintenance & bigint & \checkmark &  \\
+    material & bigint & \checkmark &
+\end{longtblr}
