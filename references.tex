@@ -1,92 +1,128 @@
+% vim:ft=tex:ts=2:sw=0:noet
+% Author: Plump Albert (plumpalbert@gmail.com)
 \anonchapter{Список литературы}
+
+% магическая команда для написания эл. ресурсов
+\newcommand{\keril}[3][\empty]{
+	{#2}.
+	[Электронный ресурс]{%
+		\def\tmp{#1}%
+		\ifx\tmp\empty%
+		\else
+			{: \tmp}%
+		\fi%
+	}. --
+	Электронные данные. --
+	Режим доступа: \url{#3}
+	(дата обращения: \today).%
+}
+
 \begin{enumerate}
-	\item ГОСТ 33997-2016 \textquote{Колесные транспортные средства. Требования
-		к безопасности в эксплуатации и методы проверки}\\
-	\url{https://docs.cntd.ru/document/1200146241}.
+	\item \href
+		{https://docs.cntd.ru/document/1200146241}
+		{
+			ГОСТ 33997-2016. Колесные транспортные средства. Требования к безопасности
+			в эксплуатации и методы проверки (с Поправкой). -- Официальное издание.
+			М.: Стандартинформ, 2018. -- 75 с.
+		}
 		\label{ref:ГОСТ-требования-то}
 
-	\item 1С: Автосервис\\
-		\url{https://solutions.1c.ru/catalog/autoservice/features}
+\item \keril
+		{1С:Предприятие 8. Автосервис. Возможности}
+		{https://solutions.1c.ru/catalog/autoservice/features}%
 		\label{ref:1С-автосервис}
 
-	\item iDirector\\
-		\url{https://auto.a25.ru/}
+	\item \keril
+		{iDirector}
+		{https://auto.a25.ru/}%
 		\label{ref:iDirector}
 
-    \item \href{https://www.fusionsoft.ru}
-        {Fusionsoft сайт}
+	\item \keril
+		{Fusionsoft --- Разработка ПО любой сложности}
+		{https://www.fusionsoft.ru}
 		\label{ref:fs}
 
-    \item \href{https://ru.wikipedia.org/wiki/Ansible}
-        {Wiki. Ansible}
+	\item \keril[Википедия. Свободная энциклопедия]
+		{Ansible}
+		{https://ru.wikipedia.org/wiki/Ansible}
 		\label{ref:wiki-ansible}
 
-    \item \href{https://cobbler.github.io/}
-        {Cobbler}
-		\label{ref:cobbler}
-
-    \item \href{https://www.redhat.com/en}
-        {Red Hat Inc}
-		\label{ref:redhat}
-
-    \item \href{https://jinja.palletsprojects.com/en/3.1.x/}
-        {Jinja2}
-		\label{ref:jinja2}
-
-    \item \href{https://www.docker.com/}
-        {Docker. Home}
-		\label{ref:docker}
-
-    \item \href{https://ru.wikipedia.org/wiki/Docker}
-        {Wiki. Docker}
+	\item \keril[Википедия. Свободная энциклопедия]
+		{Docker}
+		{https://ru.wikipedia.org/wiki/Docker}
 		\label{ref:wiki-docker}
 
-    \item \href{https://www.docker.com/blog/tp-docker-engine-windows-server-2016/}
-        {Docker on windows}
+	\item
+		Porterie A. Introducing the Technical Preview of Docker Engine for Windows Server 2016
+		[Электронный ресурс]: электронный блог / Porterie Arnaud --
+		Электронные данные --
+		Режим доступа:
+		\url{https://www.docker.com/blog/tp-docker-engine-windows-server-2016/}
+		(дата обращения: \today).%
 		\label{ref:docker-windows}
 
-	\item \href{http://абсолютпб.рф/техническое-обслуживание}{Техническое
-		обслуживание}
+	\item \keril
+		{Техническое обслуживание}
+		{http://абсолютпб.рф/техническое-обслуживание}
 		\label{ref:техническое-обслуживание}
 
-	\item Техническое обслуживание и ремонт автотранспорта \\
-		\url{https://kat-9.mskobr.ru/files/2018/_i_remont_dlya_SPO_(red_2)_svodnaya.pdf}
+	\item \href
+		{https://kat-9.mskobr.ru/files/2018/_i_remont_dlya_SPO_(red_2)_svodnaya.pdf}
+		{
+			Шишлов А. Н. Техническое обслуживание и ремонт автотранспорта:
+			учебнопрактическое пособие для автомобильных колледжей. [Текст] /
+			Шишлов А. Н., Лебедев С. В., Быховский М.Л., Прокофьев В.В. --
+			М.: ГБПОУ КАТ №9,
+			2017. – 352 с.
+		}
 		\label{ref:му-ремонт-и-техническое-обслуживание}
 
-	\item Живой англо-русский словарь по вычислительной технике, информационным технологиям и связи\\
+	\item
+		Живой англо-русский словарь по вычислительной технике,
+		информационным технологиям и связи [Электронный ресурс]: терминологический
+		словарь. / Ред. Дмитриев В.А. --
+		Электронные данные --
+		Режим доступа:
 		\url{http://www.morepc.ru/dict/}
+		(дата обращения: \today).%
 		\label{ref:календарное-планирование}
 
-    \item
-        \href{http://rusautomobile.ru/wp-content/uploads/dop_materials/books/03.12.2015/6/KuznetsovESUpravlenietehnicheskojekspluatatsiejavtomobilej(MTransport1990).pdf}%
-        {Кузнецов Е.С. Управление технической эксплуатацией автомобилей --
-        2-е изд., перераб. и доп. -- М.: Транспорт, 1990 -- 272 с.}.
-        \label{ref:кузнецов}
+	\item
+		\href{http://rusautomobile.ru/wp-content/uploads/dop_materials/books/03.12.2015/6/KuznetsovESUpravlenietehnicheskojekspluatatsiejavtomobilej(MTransport1990).pdf}%
+		{Кузнецов Е.С. Управление технической эксплуатацией автомобилей --
+		2-е изд., перераб. и доп. [Текст] / Кузнецов Е.С.; Ред. Белоцерковская
+		С.И. -- М.: Транспорт, 1990. -- 272 с.}%
+		\label{ref:кузнецов}
 
-    \item \href%
-        {https://www.php.net/}
-        {PHP Home}
-        \label{ref:php-home}
+	\item \keril%
+		{PHP: Hypertext Preprocessor}
+		{https://www.php.net/}%
+		\label{ref:php-home}
 
-    \item \href%
-        {https://laravel.com/docs/9.x/installation}
-        {Laravel Home}
-        \label{ref:laravel-home}
+	\item \keril%
+		{Installation - Laravel - The PHP Framework For Web Artisans}
+		{https://laravel.com/docs/9.x/installation\#why-laravel}%
+		\label{ref:laravel-home}
 
-    \item \href%
-        {https://docs.ansible.com/ansible/latest/index.html}
-        {Ansible docs}
-        \label{ref:ansible-docs}
+	\item \keril%
+		{Ansible Documentation --- Ansible Documentation}
+		{https://docs.ansible.com/ansible/latest/index.html}%
+		\label{ref:ansible-docs}
+
+	\item \keril[Википедия. Свободная энциклопедия]%
+		{Концептуальная модель}
+		{https://ru.wikipedia.org/wiki/Концептуальная_модель}%
+		\label{ref:wiki-er-диаграммы}
 
 	\item \href%
-        {https://ru.wikipedia.org/wiki/Концептуальная_модель}
-        {Википедия. Концептуальная модель}
-        \label{ref:wiki-er-диаграммы}
-
-    \item \href%
-        {https://eduherald.ru/ru/article/view?id=20048}
-        {Международный студенческий научный вестник}
-        \label{ref:er-диаграммы}
-        \label{ref:last}
+		{https://eduherald.ru/ru/article/view?id=20048}
+		{
+			Волошин В.А. Инфологическая модель данных:
+			пример построения ER-диаграммы [Текст] / Волошин В.А., Шляхов В.Д.,
+			Барышевский С.О. // Международный студенческий научный вестник. – 2020.
+			– № 2.
+		}
+		\label{ref:er-диаграммы}
+		\label{ref:last}
 
 \end{enumerate}
