@@ -1,0 +1,65 @@
+---
+- name: Uninstall ufw
+  tags: security,firewall
+  become: yes
+  apt:
+    name: ufw
+    state: absent
+    purge: yes
+
+- name: Install firewalld
+  tags: security,firewall
+  become: yes
+  apt:
+    name: firewalld
+    state: latest
+
+- name: Enable firewalld service
+  tags: security,firewall
+  become: yes
+  service:
+    state: started
+    enabled: yes
+    name: firewalld
+
+- name: Allow SSH connections
+  tags: security,firewall
+  become: yes
+  shell: firewall-cmd --zone=public --permanent --add-port={{ ssh_port }}/tcp
+
+- name: Disable default SSH port
+  tags: security,firewall
+  become: yes
+  shell: firewall-cmd --zone=public --permanent --remove-service=ssh
+
+- name: Allow HTTPS
+  tags: security,firewall
+  become: yes
+  shell: firewall-cmd --zone=public --permanent --add-service=https
+
+- name: Allow HTTP
+  tags: security,firewall
+  become: yes
+  shell: firewall-cmd --zone=public --permanent --add-service=http
+
+- name: Copy sshd_config to host
+  tags: security,ssh
+  become: yes
+  template:
+    owner: root
+    group: root
+    mode: 0644
+    src: sshd_config.j2
+    dest: /etc/ssh/sshd_config
+
+- name: Restart sshd
+  tags: security,ssh
+  become: yes
+  service:
+    name: sshd
+    state: restarted
+
+- name: Reload firewalld rules
+  tags: security,firewall
+  become: yes
+  shell: firewall-cmd --reload

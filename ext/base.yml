@@ -1,0 +1,63 @@
+- name: Set hostname
+  tags: base
+  become: true
+  copy:
+    content: "{{ hostname }}"
+    dest: /etc/hostname
+
+- name: Configure locale.gen file
+  tags: base
+  become: true
+  replace:
+    path: /etc/locale.gen
+    regexp: '^#\s*en_US.UTF-8 UTF-8'
+    replace: "en_US.UTF-8 UTF-8"
+
+- name: Generate locales
+  tags: base
+  become: true
+  shell: locale-gen
+
+- name: Install essential packages
+  tags: base
+  become: true
+  apt:
+    update_cache: true
+    name: git,sudo,vim-tiny,zsh
+
+- name: Create `sudo` group
+  tags: base
+  become: yes
+  group:
+    name: sudo
+
+- name: Copy `99-sudo` file to `/etc/sudoers.d/`
+  tags: base
+  become: yes
+  copy:
+    owner: root
+    group: root
+    mode: 0640
+    src: 99-sudo
+    dest: /etc/sudoers.d/99-sudo
+
+- name: Create user
+  tags: base
+  become: yes
+  user:
+    password: "{{ user_password | password_hash('sha512') }}"
+    name: "{{ user_name }}"
+    shell: /usr/bin/zsh
+    group: users
+    groups:
+      - sudo
+
+- name: Copy zsh config
+  tags: base
+  become: yes
+  copy:
+    src: zshrc
+    dest: "/home/{{ user_name }}/.zshrc"
+    owner: "{{ user_name }}"
+    group: users
+    mode: 0755

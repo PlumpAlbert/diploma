@@ -1,0 +1,95 @@
+# vim:ft=yaml.ansible
+- name: Create `www` group
+  tags: web,base
+  become: yes
+  group:
+    name: www
+
+- name: Create `www` user
+  tags: web,base
+  become: yes
+  user:
+    home: /var/www
+    create_home: yes
+    group: www
+    name: www
+
+- name: Install nginx
+  tags: web
+  become: yes
+  apt:
+    name: nginx
+    state: latest
+
+- name: Disable default nginx site
+  tags: web
+  become: true
+  file:
+    state: absent
+    path: /etc/nginx/sites-enabled/default
+
+- name: Enable nginx service
+  tags: web
+  become: yes
+  service:
+    name: nginx
+    enabled: yes
+    state:  started
+
+- name: Install postgresql
+  tags: web,database
+  become: yes
+  apt:
+    name: postgresql
+    state: latest
+
+- name: Enable postgresql
+  tags: web,database
+  become: yes
+  service:
+    name: postgresql
+    state: started
+    enabled: yes
+
+- name: Copy GoDaddy API credentials
+  tags: web,security,dns
+  become: yes
+  copy:
+    src: godaddy.ini
+    dest: /var/lib/letsencrypt/godaddy_credentials.ini
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Create certificate for domain and subdomains
+  tags: web,dns
+  become: yes
+  shell: docker run --rm \
+    -v /var/lib/letsencrypt:/var/lib/letsencrypt \
+    -v /etc/letsencrypt:/etc/letsencrypt \
+    --cap-drop=all \
+    miigotu/certbot-dns-godaddy certbot certonly \
+      --authenticator dns-godaddy \
+      --dns-godaddy-propagation-seconds 900 \
+      --dns-godaddy-credentials /var/lib/letsencrypt/godaddy_credentials.ini \
+      --keep-until-expiring --non-interactive --expand \
+      --server https://acme-v02.api.letsencrypt.org/directory \
+      --agree-tos --email "plumpalbert@gmail.com" \
+      -d plumpalbert.xyz -d '*.plumpalbert.xyz'
+
+- name: Copy nginx configuration
+  tags: web,nginx
+  become: yes
+  copy:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Reload nginx
+  tags: web,nginx
+  become: true
+  service:
+    name: nginx
+    state: restarted
