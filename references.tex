@@ -3,7 +3,8 @@
 \anonchapter{Список литературы}
 
 % магическая команда для написания эл. ресурсов
-\newcommand{\keril}[3][\empty]{
+\makeatletter
+\newcommand{\keril}[3][]{
 	{#2}.
 	[Электронный ресурс]{%
 		\def\tmp{#1}%
@@ -14,8 +15,9 @@
 	}. --
 	Электронные данные. --
 	Режим доступа: \url{#3}
-	(дата обращения: \today).%
+	(дата обращения: 20.05.2022).%
 }
+\makeatother
 
 \begin{enumerate}
 	\item \href
