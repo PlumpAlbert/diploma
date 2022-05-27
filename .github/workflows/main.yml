@@ -11,7 +11,7 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v3
       - name: Compile project
-        uses: plumpalbert/doctex@v1
+        uses: plumpalbert/doctex@v2
         with:
           root_file: nirs.tex
       - name: Get compiled PDF
