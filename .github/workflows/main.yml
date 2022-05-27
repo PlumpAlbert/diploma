@@ -6,7 +6,6 @@ jobs:
   compile-project:
     runs-on: ubuntu-latest
     name: A job to compile diploma
-
     steps:
       - name: Clone repo
         uses: actions/checkout@v3
@@ -14,6 +13,9 @@ jobs:
         uses: plumpalbert/doctex@v2
         with:
           root_file: nirs.tex
+        env:
+          SRC_DIR: /github/workspace
+          BUILD_DIR: /github/workspace
       - name: Get compiled PDF
         uses: actions/upload-artifact@v2
         with:
