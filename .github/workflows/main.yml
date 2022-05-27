@@ -15,7 +15,6 @@ jobs:
           root_file: nirs.tex
         env:
           SRC_DIR: /github/workspace
-          BUILD_DIR: /github/workspace
       - name: Get compiled PDF
         uses: actions/upload-artifact@v2
         with:
