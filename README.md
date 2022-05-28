@@ -1,5 +1,5 @@
-Testing my devops skills. That's why i need this awesome commit
+I'm such a bad DevOps.
 
-God bless me
+New version of doctex image. Please compile.
 
-kill me
+Faken latexmk with `$max_repeat` option.
