@@ -5,6 +5,7 @@
 \usepackage{rotating}
 \usepackage{amssymb}
 \usepackage{pdflscape}
+\usepackage{import}
 \makeatletter
 \newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
 \makeatother
@@ -29,8 +30,9 @@
 \tableofcontents
 
 \include{intro}
-\subfile{1/main}
-% \include{2/main}
+\import{1/}{main.tex}
+\import{2/}{main.tex}
+
 \include{outro}
 \include{references.tex}
 
