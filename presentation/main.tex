@@ -126,26 +126,29 @@
 \begin{frame}
 	{Эмпирические математические модели}
     \begin{columns}[c]
-        \begin{column}{0.64\linewidth}
+        \begin{column}{0.56\linewidth}
             \begin{figure}[h]
                 \includegraphics[keepaspectratio,width=\linewidth]{2/images/pdf.b.png}
             \end{figure}
         \end{column}
-        \begin{column}{0.5\linewidth}
+        \begin{column}{0.56\linewidth}
 {\footnotesize
 \begin{math}
+    \arraycolsep=1.5pt\def\arraystretch{2.5}
     \begin{array}{l}
-        d_\text{П} = d_\text{И}, \\
-
-        x_{min} < l_p < \overline{x} \\
+        \text{Пусть:}
+        \begin{cases}
+            d_\text{П} = d_\text{И}, \\
+            x_{min} < l_p < \overline{x}
+        \end{cases} \\
 
         l`_p = \left.
             \int_{x_{min}}^{l_p} lf(l)\,dl
         \middle/
             \left( \int_{x_{min}}^{l_p} f(l)\,dl \right)
-        \right. \\
+        \right. \hfill (1) \\
 
-        C^I_1 = \frac{cF + d_\Pi R}{l_p R + l`_p F} \\
+        C^I_1 = \frac{cF + d_\Pi R}{l_p R + l`_p F} \hfill (2) \\
 
         C^I_2 = \frac%
             {cF + \left( d_K + d_\text{И} \right) R_1 + d_K R_2}%
@@ -153,7 +156,7 @@
         =
         \frac%
             {cF + R \left( d_K + d_\text{И} \right)}%
-            {l`_p F + l_p R} \\
+            {l`_p F + l_p R} \hfill (3) \\
 
         \left[
             \frac%
@@ -165,7 +168,7 @@
             { k_\Pi \upsilon_x }%
             { \left( 1 - \upsilon_x \right) }
         -
-        k_\Pi > 0
+        k_\Pi > 0 \hfill (4)
     \end{array}
 \end{math}
 }
