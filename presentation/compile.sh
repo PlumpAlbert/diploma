@@ -3,7 +3,7 @@
 docker run \
 	--detach --rm \
 	--name "pdp-presentation" \
-	-v "${PWD}/presentation":/work/src \
+	-v "${PWD}":/work/src \
 	-v "${PWD}/build":/work/build \
-	-e FILENAME=main.tex \
+	-e FILENAME=presentation/main.tex \
 	plumpalbert/doctex
