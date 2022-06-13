@@ -5,6 +5,9 @@
 \usepackage{gost-table}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{wrapfig}
 
 %%% beamer
 \setmainfont{Times New Roman}
@@ -122,6 +125,52 @@
 
 \begin{frame}
 	{Эмпирические математические модели}
+    \begin{columns}[c]
+        \begin{column}{0.64\linewidth}
+            \begin{figure}[h]
+                \includegraphics[keepaspectratio,width=\linewidth]{2/images/pdf.b.png}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\linewidth}
+{\footnotesize
+\begin{math}
+    \begin{array}{l}
+        d_\text{П} = d_\text{И}, \\
+
+        x_{min} < l_p < \overline{x} \\
+
+        l`_p = \left.
+            \int_{x_{min}}^{l_p} lf(l)\,dl
+        \middle/
+            \left( \int_{x_{min}}^{l_p} f(l)\,dl \right)
+        \right. \\
+
+        C^I_1 = \frac{cF + d_\Pi R}{l_p R + l`_p F} \\
+
+        C^I_2 = \frac%
+            {cF + \left( d_K + d_\text{И} \right) R_1 + d_K R_2}%
+            {l`_p F + l_p R}
+        =
+        \frac%
+            {cF + R \left( d_K + d_\text{И} \right)}%
+            {l`_p F + l_p R} \\
+
+        \left[
+            \frac%
+                { 2 k_\Pi \upsilon_x }%
+                { \left( 1 + \upsilon^2_x \right) \left( 1 - \upsilon_x \right) }
+        \right]^{ \upsilon_x }
+        -
+        \frac%
+            { k_\Pi \upsilon_x }%
+            { \left( 1 - \upsilon_x \right) }
+        -
+        k_\Pi > 0
+    \end{array}
+\end{math}
+}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
