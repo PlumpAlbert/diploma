@@ -4,13 +4,13 @@
 \usepackage{csquotes}
 \usepackage{gost-table}
 \usepackage{graphicx}
-\graphicspath{{./images}}
+\usepackage{amsmath}
 
 %%% beamer
 \setmainfont{Times New Roman}
 \usefonttheme{serif}
 \setbeamertemplate{frametitle}[default][center]
-\usetheme{Singapore}
+% \usetheme{Singapore}
 \addtobeamertemplate{navigation symbols}{}{%
     \usebeamerfont{footline}%
     \usebeamercolor[fg]{footline}%
@@ -89,13 +89,31 @@
 	{ER-диаграмма предметной области}
     \begin{figure}[h]
         \centering
-        \includegraphics[keepaspectratio,width=\textwidth]{er-diagram.png}
+        \includegraphics[keepaspectratio,width=\textwidth]{presentation/images/er-diagram.png}
         \label{fig:er-diagram}
     \end{figure}
 \end{frame}
 
 \begin{frame}
 	{Теоретические математические модели}
+    Стратегия для непрофилактируемых отказов и неисправностей
+    \begin{equation*}
+        C^{II} =
+        c\,/\,\bar{x} =
+        c : \int_{x_{min}}^{x_{max}} x f(x)\,dx,
+    \end{equation*}
+    где $\bar{x},\,x_{min} \,\text{и} \,x_{max}$ -- соответственно средняя,
+    минимальная и максимальная наработки на отказ; $c$ -- разовые затраты на
+    устранение отказа; $f(x)$ -- плотность вероятности наработки на отказ.
+
+    Стратегия для профилактируемых отказов и неисправностей
+    \begin{equation*}
+        d_{\text{п}} = d_{\text{к}} + k d_{\text{и}}\,,
+    \end{equation*}
+    где $d_{\text{п}}$ -- стоимость ТО (профилактики); $d_{\text{к}}$ --
+    стоимость контрольно-диагностической части операции ТО; $k$ -- коэффициент
+    повторяемости исполнительской части операции ТО; $d_{\text{н}}$ -- стоимость
+    исполнительской части операции ТО.
 \end{frame}
 
 \begin{frame}
