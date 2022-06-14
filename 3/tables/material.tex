@@ -1,11 +1,7 @@
 \begin{longtblr}
 [
-    caption = {
-        Сущность
-        \textquote{Материалы}
-        (\texttt{\small materials})
-    },
-	label = {tab:materials},
+	caption = {Сущность \textquote{Материал} (material)},
+	label = {tab:material},
 ]
 {
 	hlines, vlines,
@@ -16,5 +12,7 @@
 }
 \SetCell[c=1,r=1]{c}{Код} & Тип & M & PK \\
     id & bigint & \checkmark & \checkmark \\
-    name & varchar & \checkmark &
+    code & varchar(50) & \checkmark & \\
+    name & varchar(100) & \checkmark & \\
+    price & float & \checkmark &
 \end{longtblr}
