@@ -12,14 +12,10 @@
 %%% beamer
 \setmainfont{Times New Roman}
 \usefonttheme{serif}
+\usetheme{boxes}
+\beamertemplatenavigationsymbolsempty
 \setbeamertemplate{frametitle}[default][center]
-\usetheme{Singapore}
-\addtobeamertemplate{navigation symbols}{}{%
-    \usebeamerfont{footline}%
-    \usebeamercolor[fg]{footline}%
-    \hspace{1em}%
-    \insertframenumber/\inserttotalframenumber
-}
+\setbeamertemplate{footline}[page number]
 %%%
 
 \begin{document}
@@ -84,7 +80,7 @@
 	{ER-диаграмма предметной области}
     \begin{figure}[h]
         \centering
-        \includegraphics[keepaspectratio,width=\textwidth]{presentation/images/er-diagram.png}
+        \includegraphics[keepaspectratio,width=\textwidth]{2/images/er-2.png}
         \label{fig:er-diagram}
     \end{figure}
 \end{frame}
@@ -190,10 +186,9 @@
     \begin{enumerate}
         \item Входные данные пользователей системы, полученные от администратора,
             при их регистрации в системе.
-        \item Входные данные техники, полученные от старшего техника, при их
-            регистрации в системе.
-        \item Информация о необходимых материалах для проведения технического
-            обслуживания и ремонта автомобиля.
+        \item Входные данные техники, полученные из паспорта автомобиля.
+        \item Информация из справочников проведения технического обслуживания о
+            необходимых материалах для проведения работ.
     \end{enumerate}
 \end{frame}
 
@@ -212,6 +207,55 @@
         \centering
         \includegraphics[keepaspectratio,width=\textwidth]{3/images/expenses-report.png}
     \end{figure}
+\end{frame}
+
+\begin{frame}
+    {Диаграмма пакетов}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[keepaspectratio,width=\textwidth]{presentation/images/modules.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    {Структура аппаратных средств}
+    Минимальные системные требования для серверного приложения:
+    \begin{itemize}
+        \item операционная система: Windows 11, Windows 10, Debian Linux 10;
+        \item процессор: с тактовой частотой 1 Гц или выше, с поддержкой
+            виртуализации;
+        \item оперативная память: 1Гб;
+        \item стабильное интернет подключение;
+        \item минимальное место на диске 2Гб.
+    \end{itemize}
+
+    Минимальные системные требования клиента -- современный веб-браузер.
+\end{frame}
+
+\begin{frame}
+    {Структура программных средств}
+    Для корректной работы системы требуются следующие программные средства:
+
+    \begin{itemize}
+        \item установленная система Windows 10 x64 (64-bit),
+            Debian Linux x64 (64-bit) версии 10 или новее;
+        \item Docker Engine v20.10;
+        \item СУБД PostgreSQL 9 или новее;
+        \item веб-сервер Nginx v1.10 или новее.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    {Результаты работы}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[keepaspectratio,width=\textwidth]{presentation/images/tech.plumpalbert.xyz.technician.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \huge{Спасибо за внимание!}
 \end{frame}
 
 \end{document}
