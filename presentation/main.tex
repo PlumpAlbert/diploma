@@ -41,7 +41,7 @@
 \end{frame}
 
 \begin{frame}
-    {Характеристика объекта автоматизации или предметной области}
+    {Характеристика предметной области}
     В процессе эксплуатации автомобиля его составные части изнашиваются, что
     приводит к снижению эффективности или даже поломке.
     \\[\baselineskip]
@@ -54,25 +54,27 @@
 \end{frame}
 
 \begin{frame}
-	{Постановка задачи. Цели, критерии оценки и ограничения}
+	{Постановка задачи и критерии успешности системы}
+    Упрощение задачи поддержки автомобильного парка в технически исправном
+    состоянии можно достичь путем ведения единой информационной базы по всем
+    машинам.
+    \\[\baselineskip]
+
     Основными факторами успешности разрабатываемой системы являются качество
     технического состояния автомобильной техники, а также снижение затрат при
-    проведении работ на ней.
+    проведении работ.
 \end{frame}
 
 \begin{frame}
-	{Основные понятия и процессы, их свойства и закономерности}
-    Разрабатываемая информационная система должна обеспечивать выполнение
-    следующих бизнес-процессов:
+	{Функции системы}
     \begin{itemize}
-      \item обеспечивать просмотр и редактирование информации о конкретном
-        автомобиле;
-      \item обеспечивать просмотр и редактирование информации о текущем статусе
-        работ;
-      \item обеспечивать просмотр и редактирование информации о сотрудниках;
-
-      \item составлять график прохождения технического обслуживания и ремонта
-        техникой.
+      \item учет текущего статуса проведения технического обслуживания автомобилей;
+      \item учет активных задач автослесаря;
+      \item учет ресурсов, необходимых для проведения ТО;
+      \item генерация отчетов о затратах за период времени, указываемый
+          пользователем;
+      \item помощь в составлении графика прохождения технического обслуживания
+          техники.
     \end{itemize}
 \end{frame}
 
@@ -112,59 +114,6 @@
 \end{frame}
 
 \begin{frame}
-	{Эмпирические математические модели}
-    \begin{columns}[c]
-        \begin{column}{0.56\linewidth}
-            \begin{figure}[h]
-                \includegraphics[keepaspectratio,width=\linewidth]{2/images/pdf.b.png}
-            \end{figure}
-        \end{column}
-        \begin{column}{0.56\linewidth}
-{\footnotesize
-\begin{math}
-    \arraycolsep=1.5pt\def\arraystretch{2.5}
-    \begin{array}{l}
-        \text{Пусть:}
-        \begin{cases}
-            d_\text{П} = d_\text{И}, \\
-            x_{min} < l_p < \overline{x}
-        \end{cases} \\
-
-        l`_p = \left.
-            \int_{x_{min}}^{l_p} lf(l)\,dl
-        \middle/
-            \left( \int_{x_{min}}^{l_p} f(l)\,dl \right)
-        \right. \hfill (1) \\
-
-        C^I_1 = \frac{cF + d_\Pi R}{l_p R + l`_p F} \hfill (2) \\
-
-        C^I_2 = \frac%
-            {cF + \left( d_K + d_\text{И} \right) R_1 + d_K R_2}%
-            {l`_p F + l_p R}
-        =
-        \frac%
-            {cF + R \left( d_K + d_\text{И} \right)}%
-            {l`_p F + l_p R} \hfill (3) \\
-
-        \left[
-            \frac%
-                { 2 k_\Pi \upsilon_x }%
-                { \left( 1 + \upsilon^2_x \right) \left( 1 - \upsilon_x \right) }
-        \right]^{ \upsilon_x }
-        -
-        \frac%
-            { k_\Pi \upsilon_x }%
-            { \left( 1 - \upsilon_x \right) }
-        -
-        k_\Pi > 0 \hfill (4)
-    \end{array}
-\end{math}
-}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}
 	{Логическая модель данных}
     \begin{figure}[H]
         \centering
@@ -181,36 +130,19 @@
 \end{frame}
 
 \begin{frame}
-	{Описание источников информации, входных сигналов и документов}
+	{Описание источников информации}
     Основными источниками информации в системе являются:
     \begin{enumerate}
         \item Входные данные пользователей системы, полученные от администратора,
             при их регистрации в системе.
         \item Входные данные техники, полученные из паспорта автомобиля.
-        \item Информация из справочников проведения технического обслуживания о
-            необходимых материалах для проведения работ.
+        \item Информация из справочников нормативно-технической документации
+            необходимых материалах для проведения технического обслуживания.
     \end{enumerate}
 \end{frame}
 
 \begin{frame}
-	{Описание выходной информации: сигналов, документов и видеокадров}
-    График прохождения технического осмотра.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[keepaspectratio,width=\textwidth]{3/images/calendar-planning.png}
-    \end{figure}
-\end{frame}
-\begin{frame}
-	{Описание выходной информации: сигналов, документов и видеокадров}
-    Отчеты по затратам
-    \begin{figure}[H]
-        \centering
-        \includegraphics[keepaspectratio,width=\textwidth]{3/images/expenses-report.png}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-    {Диаграмма пакетов}
+    {Схема функционирования системы}
     \begin{figure}[H]
         \centering
         \includegraphics[keepaspectratio,width=\textwidth]{presentation/images/modules.png}
@@ -228,6 +160,7 @@
         \item стабильное интернет подключение;
         \item минимальное место на диске 2Гб.
     \end{itemize}
+    \\[\baselineskip]
 
     Минимальные системные требования клиента -- современный веб-браузер.
 \end{frame}
@@ -246,10 +179,45 @@
 \end{frame}
 
 \begin{frame}
-    {Результаты работы}
+	{График прохождения технического осмотра}
     \begin{figure}[H]
         \centering
-        \includegraphics[keepaspectratio,width=\textwidth]{presentation/images/tech.plumpalbert.xyz.technician.png}
+        \includegraphics[keepaspectratio,width=\textwidth]{presentation/images/tech.plumpalbert.xyz.calendar.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+	{Добавление технического обслуживания}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[keepaspectratio,width=\textwidth]{presentation/images/tech.plumpalbert.xyz.create_maintenance.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+	{Отчеты по затратам}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[keepaspectratio,width=\textwidth]{presentation/images/tech.plumpalbert.xyz.report.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+	{Парк автомобилей, зарегистрированных в системе}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[keepaspectratio,width=\textwidth]{presentation/images/tech.plumpalbert.xyz.autos.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+	{Список активных обслуживаний автослесаря}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[keepaspectratio,width=\textwidth]{presentation/images/tech.plumpalbert.xyz.tasks.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+	{Список запланированных обслуживаний}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[keepaspectratio,width=\textwidth]{presentation/images/tech.plumpalbert.xyz.maintenances.png}
     \end{figure}
 \end{frame}
 
