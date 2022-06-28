@@ -12,15 +12,17 @@ jobs:
       - name: Compile project
         uses: plumpalbert/doctex@v2
         with:
-          root_file: nirs.tex
+          root_file: nirs.tex presentation/main.tex
         env:
           SRC_DIR: /github/workspace
           BUILD_DIR: /github/workspace
+      - name: compress artefacts
+        run: tar -czf result.tar.xz main.pdf nirs.pdf
       - name: Get compiled PDF
         uses: actions/upload-artifact@v2
         with:
-          name: PDF
-          path: nirs.pdf
+          name: PDFs
+          path: result.tar.xz
       - name: Release compiled file
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -28,3 +30,4 @@ jobs:
           name: Diploma
           files: |
             nirs.pdf
+            main.pdf
